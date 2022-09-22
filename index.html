@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="decodi.css">
+    <title>Codificador</title>
+</head>
+<body>
+    <h1>Criptografe seu texto</h1>
+
+    <section>
+    <textarea id="textarea1" cols="30" rows="10" placeholder="Digite seu texto aqui"></textarea>
+
+<div>
+    <button id="botao1" onclick="btnEncriptar();btnMudaCor();btnColor()">Criptografar</button>
+    <button id="botao2" onclick="btnDesencriptar();btnColor();btnMudaCor()">Descriptografar</button>
+    <button id="botao3">Copiar</button>
+</div>
+</section>
+
+
+<section>
+    <textarea id="textarea2" cols="30" rows="10"></textarea>
+</section>
+
+</body>
+
+<script>
+    let textarea1= document.querySelector('#textarea1');
+    let textarea2= document.querySelector('#textarea2');
+    let botao1= document.querySelector('#botao1');
+    let botao2= document.querySelector('#botao2');
+    let botao3= document.querySelector('#botao3');
+
+    function btnEncriptar(){
+        const textoEncriptado = encriptar(textarea1.value)
+        textarea2.value= textoEncriptado
+        console.log("clicou!!")
+    }
+    
+
+    
+
+    function encriptar(stringEncriptada){
+        let matrizCodigo=[["e", "enter"], ["i", "imes"], ["a","ai"], ["o", "ober"], ["u", "ufat"]]
+        stringEncriptada = stringEncriptada.toLowerCase();
+
+        for(let i=0; i < matrizCodigo.length; i++){
+            if(stringEncriptada.includes(matrizCodigo[i][0])){ //para ver se existe o que estamos buscando
+                stringEncriptada=stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])  //para substituir
+            }
+        }
+        return stringEncriptada;
+    }
+
+
+
+    function btnDesencriptar(){
+        const textoDesencriptado = Desencriptar(textarea1.value)
+        textarea2.value= textoDesencriptado
+        
+    }
+    
+    function Desencriptar(stringDesencriptada){
+        let matrizCodigo=[["e", "enter"], ["i", "imes"], ["a","ai"], ["o", "ober"], ["u", "ufat"]]
+        stringDesencriptada = stringDesencriptada.toLowerCase();
+
+        for(let i=0; i < matrizCodigo.length; i++){
+            if(stringDesencriptada.includes(matrizCodigo[i][1])){
+                stringDesencriptada= stringEncriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0])
+            }
+        }
+        return stringDesencriptada;
+    }
+
+
+    function btnColor(e){
+            botao1.style.background="#cbcbce";
+            botao2.style.background="darkblue"
+            botao2.style.color="white"
+            botao1.style.color="darkblue"
+            console.log("clicou!")
+
+        return e;
+    }
+
+    function btnMudaCor(e){
+        botao1.style.background="darkblue";
+        botao2.style.background="#cbcbce";
+        botao1.style.color="white";
+        botao2.style.color="darkblue";
+
+        return e;
+    }
+
+    botao3.addEventListener('click', copiar);
+    function copiar(){
+        textarea2.select();
+        document.execCommand("copy");
+    }
+</script>
+</html>

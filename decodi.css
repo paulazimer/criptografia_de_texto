@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+
+body{
+    background: #E5E5E5;
+}
+
+h1{
+    position: absolute;
+    left: 400px;
+    margin-top: 40px;
+    font-family: 'Dangrek', cursive;
+    letter-spacing: 3.5px;
+    word-spacing: 10px;
+
+}
+
+#botao1{
+    display: flex;
+    position: absolute;
+    top: 40rem;
+    left: 29.5rem;
+    width:200px;
+    height: 67px;
+    padding:24px;
+    border-radius: 24px;
+    justify-content: center;
+    background-color:Darkblue;
+    color:white;
+    border: none;
+    cursor:pointer;
+}
+
+#botao2{
+    display: flex;
+    position: absolute;
+    top: 40rem;
+    left: 40rem;
+    width:200px;
+    height: 67px;
+    padding:24px;
+    border-radius: 24px;
+    justify-content: center;
+    background-color:rgb(203, 203, 206);
+    color:Darkblue;
+    border: none;
+    cursor:pointer;
+}
+
+#botao3{
+    display: flex;
+    position: absolute;
+    top: 40rem;
+    left: 63rem;
+    width:150px;
+    height: 40px;
+    padding:24px;
+    border-radius: 24px;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index:9999;
+    background-color:rgb(203, 203, 206);
+    color:Darkblue;
+    border: none;
+    cursor:pointer;
+}
+
+#textarea1{
+    display: flex;
+    position: absolute;
+    background: #E5E5E5;
+    border:none;
+    Width:580px;
+    Height:408px;
+    Top:168px;
+    Left:100px;
+    font-size: 14pt;
+    padding:15px;
+    font-family: 'Inter', sans-serif;
+}
+
+#textarea1::placeholder{
+    font-size: 18pt;
+    color:Darkblue;
+    font-family: 'Inter', sans-serif;
+}
+
+#textarea1:focus::placeholder{
+    color:transparent;
+    border:none;
+}
+
+#textarea1:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#textarea2{
+    display: flex;
+    position: absolute;
+    top: 18rem;
+    left: 50rem;
+    Width:400px;
+    Height:508px;
+    Top:168px;
+    Left:870px;
+    border-radius: 20px;
+    border:none;
+    font-size: 14pt;
+    padding:15px;
+    font-family: 'Inter', sans-serif;
+}
+
+#textarea2:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
